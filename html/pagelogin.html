@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="../css/style2.css">
+</head>
+<body>
+    <main>
+        <form method="post" action="/register" autocomplete="on">
+            <fieldset>
+                <legend>Đăng ký</legend>
+
+                <div>
+                    <label for="user">Tên đăng nhập</label><br>
+                    <input id="user" name="user" type="text" required autofocus>
+                </div>
+
+                <div>
+                    <label for="email">Email</label><br>
+                    <input id="email" name="email" type="email" required>
+                </div>
+
+                <div>
+                    <label for="password">Mật khẩu</label><br>
+                    <input id="password" name="password" type="password" required>
+                </div>
+
+                <div>
+                    <label for="confirm">Nhập lại mật khẩu</label><br>
+                    <input id="confirm" name="confirm" type="password" required>
+                </div>
+
+                <div>
+                    <button type="submit">Đăng ký</button>
+                </div>
+
+                <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
