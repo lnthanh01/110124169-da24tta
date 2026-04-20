@@ -1,13 +1,46 @@
-<form id="frmInCC">
+<form id="frmInCC" onsubmit="return false;">
     <label> Nhập cửu chương:</label> 
-    <input type="text" id="txtSo" value="0">
-    <input type="button" value="In" onclick="inBangCC();"> 
+    <input type="text" id="txtSo" value="0" />
+    <input type="button" value="In" onclick="inBangCC();" />
 </form>
+
+<div id="result" aria-live="polite" style="margin-top:12px;"></div>
+
 <script>
     function inBangCC() {
-        let myForm = document.forms["frmInCC"];
-        let num = myForm.elements[0].value/.innerHTML;
-        alert(num);
-         
-           }
+        const input = document.getElementById('txtSo').value.trim();
+        if (input === '') {
+            alert('Vui lòng nhập một số.');
+            return;
+        }
+
+        const n = Number(input);
+        if (Number.isNaN(n)) {
+            alert('Giá trị không phải số hợp lệ.');
+            return;
+        }
+
+        // Tạo bảng cửu chương 1..10
+        let html = '<table style="border-collapse:collapse;width:280px">';
+        html += '<thead><tr><th style="text-align:left;padding:6px;border-bottom:1px solid #ddd">Phép tính</th><th style="text-align:right;padding:6px;border-bottom:1px solid #ddd">Kết quả</th></tr></thead><tbody>';
+
+        for (let i = 1; i <= 10; i++) {
+            const value = n * i;
+            html += `<tr>
+                        <td style="padding:6px;border-bottom:1px solid #f0f0f0">${n} × ${i}</td>
+                        <td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0">${value}</td>
+                     </tr>`;
+        }
+
+        html += '</tbody></table>';
+        document.getElementById('result').innerHTML = html;
+    }
+
+    // Bắt phím Enter trên input để in mà không submit form
+    document.getElementById('txtSo').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            inBangCC();
+        }
+    });
 </script>
