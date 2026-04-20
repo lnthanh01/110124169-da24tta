@@ -1,0 +1,13 @@
+<form id="frmInCC">
+    <label> Nhập cửu chương:</label> 
+    <input type="text" id="txtSo" value="0">
+    <input type="button" value="In" onclick="inBangCC();"> 
+</form>
+<script>
+    function inBangCC() {
+        let myForm = document.forms["frmInCC"];
+        let num = myForm.elements[0].value/.innerHTML;
+        alert(num);
+         
+           }
+</script>

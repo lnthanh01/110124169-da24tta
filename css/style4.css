@@ -1,0 +1,107 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, Arial, sans-serif;
+    background: linear-gradient(135deg, #f3fbff 0%, #f7fff6 100%);
+    color: #233044;
+    margin: 0;
+    padding: 40px 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    color: #0f5160;
+    letter-spacing: 0.6px;
+}
+
+/* Table container for better centering and card look */
+#invoice {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 auto;
+    width: 720px;
+    max-width: 95%;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(18, 32, 47, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Header row */
+#invoice thead th {
+    padding: 14px 18px;
+    text-align: left;
+    background: linear-gradient(90deg, #2aa4ad 0%, #1f7f89 100%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+}
+
+/* Body cells */
+#invoice td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(34,48,68,0.06);
+    font-size: 14px;
+    vertical-align: middle;
+    color: #263544;
+}
+
+/* Alternating row color */
+#invoice tbody tr:nth-child(odd) {
+    background: #fbfdfe;
+}
+
+/* Hover highlight */
+#invoice tbody tr:hover {
+    background: rgba(41,144,158,0.06);
+}
+
+/* Align numeric columns to right */
+#invoice .sl,
+#invoice .dg,
+#invoice .tt {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Styling for the footer (total) */
+#invoice tfoot td {
+    padding: 14px 16px;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+}
+
+#invoice tfoot td#tongtien,
+#invoice tfoot #grandTotal {
+    font-weight: 700;
+    color: #0f5160;
+    background: linear-gradient(90deg, rgba(41,144,158,0.06), transparent);
+    border-left: 1px solid rgba(34,48,68,0.04);
+    text-align: right;
+}
+
+/* Make header cells for non-number columns align left */
+#invoice thead th:first-child,
+#invoice tbody td:first-child {
+    text-align: left;
+}
+
+/* Small visual helpers */
+.right { text-align: right; }
+.bold { font-weight: 700; }
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+    #invoice thead th, #invoice td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+    #invoice {
+        width: 100%;
+        border-radius: 8px;
+    }
+}
