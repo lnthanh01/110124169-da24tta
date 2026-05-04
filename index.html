@@ -2,48 +2,58 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Mở Link</title>
+    <title>Menu điều hướng</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #9dd0dd;
+            background: linear-gradient(135deg, #9dd0dd, #c2f0f7);
             text-align: center;
-            padding-top: 100px;
+            padding: 80px 20px;
         }
 
         h1 {
             color: #333;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        a {
-            display: inline-block;
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .menu a {
             padding: 12px 25px;
-            background-color: #00bfa6;
+            background: #00bfa6;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            transition: 0.3s;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
 
-        a:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+        .menu a:hover {
+            background: #009688;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
     </style>
-
 </head>
 <body>
 
     <h1>Chọn đi người đẹp!</h1>
 
-    <a href="html/page.html" target="_blank">Đi tới profile</a>
-    <a href="html/page2.html" target="_blank">Đi tới trang đăng nhập</a>
-    <a href="html/pagelogin.html" target="_blank">Đi tới trang đăng ký</a>
-    <a href="html/phieudk.html" target="_blank">Đi tới trang đăng ký vào CLB </a>
-    <a href="html/hoadonmuahang.html" target="_blank">Đi tới hóa đơn thanh toán </a>
-    <a href="html/bcc.html" target="_blank">Đi tới bảng cửu chương </a>
+    <div class="menu">
+        <a href="html/page.html" target="_blank">Profile</a>
+        <a href="html/page2.html" target="_blank">Đăng nhập</a>
+        <a href="html/pagelogin.html" target="_blank">Đăng ký</a>
+        <a href="html/phieudk.html" target="_blank">Đăng ký CLB</a>
+        <a href="html/hoadonmuahang.html" target="_blank">Hóa đơn</a>
+        <a href="html/bcc.html" target="_blank">Bảng cửu chương</a>
+        <a href="html/page5.html" target="_blank">Shop hoa 🌹</a>
+    </div>
+
 </body>
 </html>
