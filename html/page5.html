@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Trang sản phẩm</title>
-    <link rel="stylesheet" href="../css/page5.css">
+    <title>Trang thông tin cá nhân</title>
+    <!--<link rel = "stylesheet" href = "../css/style5.css">-->
+    <script src = "../js/lib1.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <div class = "container" id = "container">
+        <div class="row" id = "product-list">
 
-<script src="../js/page5.js"></script>
+        </div>
 
+    </div>
+ <script>
+    productList.forEach(item =>
+        addProduct(item.id, item.name, item.price, item.image, item.productLink)
+    );
+</script>
+    
 </body>
 </html>

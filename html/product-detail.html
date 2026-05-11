@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sản phẩm</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .product-container{
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+
+            display: flex;
+            gap: 30px;
+        }
+
+        .product-image img{
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .product-info{
+            flex: 1;
+        }
+
+        .product-name{
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .price-box{
+            margin-bottom: 20px;
+        }
+
+        .new-price{
+            color: red;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .old-price{
+            color: gray;
+            text-decoration: line-through;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .description{
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .contact-btn{
+            display: inline-block;
+            background: #ff4d6d;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        .contact-btn:hover{
+            background: #e63956;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="product-container">
+
+    <div class="product-image">
+        <img id="product-image">
+    </div>
+
+    <div class="product-info">
+
+        <h1 class="product-name" id="product-name"></h1>
+
+        <div class="price-box">
+
+            <span class="new-price" id="product-price"></span>
+
+            <span class="old-price" id="product-old-price"></span>
+
+        </div>
+
+        <p class="description" id="product-description"></p>
+
+        <a
+            href="https://facebook.com"
+            target="_blank"
+            class="contact-btn"
+        >
+            Liên hệ mua hàng
+        </a>
+
+    </div>
+
+</div>
+
+<script src="../js/product.js"></script>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+const product = productList.find(p => p.id == id);
+
+if(product){
+
+    document.getElementById("product-name")
+        .textContent = product.name;
+
+    document.getElementById("product-price")
+        .textContent =
+            product.price.toLocaleString() + " VNĐ";
+
+    document.getElementById("product-old-price")
+        .textContent =
+            product.oldPrice.toLocaleString() + " VNĐ";
+
+    document.getElementById("product-description")
+        .textContent = product.description;
+
+    document.getElementById("product-image")
+        .src = product.image;
+
+}else{
+
+    document.body.innerHTML =
+        "<h1>Không tìm thấy sản phẩm</h1>";
+}
+
+</script>
+
+</body>
+</html>
